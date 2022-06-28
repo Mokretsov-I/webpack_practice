@@ -1,6 +1,6 @@
 export default class Tool {
-  canvas: HTMLCanvasElement | null = null;
-  ctx: CanvasRenderingContext2D | null = null;
+  canvas: HTMLCanvasElement | null;
+  ctx: CanvasRenderingContext2D | null;
 
   constructor(canvas: HTMLCanvasElement) {
     this.canvas = canvas;

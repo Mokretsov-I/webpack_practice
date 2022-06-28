@@ -1,6 +1,8 @@
 import { observer } from "mobx-react-lite";
 import React, { useEffect, useRef } from "react";
 import canvasState from "../../store/canvasState";
+import toolState from "../../store/toolState";
+import Brush from "../../tools/Brush";
 import "./Canvas.scss";
 
 const Canvas: React.FC = observer(() => {
@@ -8,6 +10,7 @@ const Canvas: React.FC = observer(() => {
 
   useEffect(() => {
     canvasState.setCanvas(canvasRef.current);
+    toolState.setTool(new Brush(canvasRef.current));
   }, []);
 
   return (
